@@ -7,7 +7,10 @@ while wordGuessed == False:
     guess = ""
     for i in range(len(correctWord)):
         n = random.randint(97, 122)
-        m = random.choice([n, 32])
+        if random.random() < 0.1:
+            m = 32
+        else:
+            m = n
         guess += chr(m)
     counter += 1
     print(counter, " ", guess)
