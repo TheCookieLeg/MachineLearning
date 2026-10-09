@@ -1,12 +1,30 @@
+import DNA
+import math
 import random
 
-class DNA {
 
+population = []
+matingPool = []
+target = "to be or not to be"
+parentA: DNA.DNA
+parentB: DNA.DNA
 
-    def RandomCharacter(self):
-        n = random.randint(97,122)
-        if random.random() < 0.1:
-            m = 32
-        else:
-            m = n
-}
+for i in range(100):
+    population.append(DNA.DNA(target.len()))
+
+def draw():
+    for phrase in population:
+        phrase.calculate_fitness(target)
+
+def make_mating_pool():
+    for phrase in population:
+        n = math.floor(phrase.fitness * 100)
+        for x in range(n):
+            matingPool.append(phrase)
+
+def choose_parents():
+    global parentA, parentB
+    parentA = random.choice(matingPool)
+    parentB = random.choice(matingPool)
+    while parentA == parentB:
+        parentB = random.choice(matingPool)
